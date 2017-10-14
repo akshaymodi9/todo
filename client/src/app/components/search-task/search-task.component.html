@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="col-md-6 col-md-offset-3">
+    <input type="text" placeholder="Task Name" #search1>
+    <button class="btn btn-primary btn-sm" (click)="search(search1.value)">Search</button>
+  </div>
+  <br>
+  <br>
+  <div class="table-responsive col-md-6 col-md-offset-3">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td>Taskname</td>
+        <td>Description</td>
+        <td>Status</td>
+      </tr>
+      <tr *ngFor="let t of task">
+          <td>{{t.taskname}}</td>
+          <td>{{t.description}}</td>
+          <td>{{t.status}}</td>
+     </tr>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <td>Taskname</td>
+          <td>Description</td>
+          <td>Status</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+         <tr *ngFor="let t of task">
+           <td>{{t.taskname}}</td>
+           <td>{{t.description}}</td>
+           <td>{{t.status}}</td>
+           <td><a [routerLink]="['/edit',t._id]"><button class="btn btn-primary btn-sm">Click</button></a></td>
+           <td><a [routerLink]="['/delete',t._id]"><button class="btn btn-danger btn-sm">Click</button></a></td>
+           </tr>
+
+           
+  
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-6 col-md-8 col-sm-offset-2 col-md-offset-3">
+    <h3>Update Task</h3>
+    <form class="form-horizontal" [formGroup]="form" (submit)="update()">
+      <input type="hidden" formControlName="id" />
+
+      <div class="form-group">
+        <label class="form-label col-md-3 col-sm-3">Task Name</label>
+        <div class="col-md-6 col-sm-6">
+          <input type="text" class="from-control" readonly formControlName="taskname" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label col-md-3 col-sm-3">Task Description</label>
+        <div class="col-md-6 col-sm-6">
+          <input type="text" class="from-control" readonly formControlName="description" />
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label class="form-label col-md-3 col-sm-3">Task Status</label>
+        <div class="col-md-6 col-sm-6">
+          <input type="text" class="from-control" formControlName="status" />
+        </div> -->
+      <div class="form-group">
+	    <label class="form-label col-md-3 col-sm-3">Task Status</label>
+        
+        <div class="col-md-6 col-sm-6">
+          <select class="from-control" formControlName="status">
+                    <option value="" selected>--select--</option>
+                    <option>complete</option>
+                    <option>not complete</option>
+                  </select>
+
+        </div>
+
+        <div *ngIf="form.controls.status.touched||forms.controls.status.dirty">
+          <div class="text-danger" [hidden]="!form.controls.status.hasError('required')">Status Required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-9 col-sm-9 col-md-offset-3">
+          <Button type="submit" class="btn btn-primary">Update</Button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>

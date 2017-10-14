@@ -1,0 +1,17 @@
+use todo
+db
+db.todotasks.insert([{
+    'taskname':'create application',
+    'description':'create an application with angular',
+    'status':'completed'
+},{
+    'taskname':'Bring book',
+    'description':'Bring a book from the store',
+    'status':'not completed'
+},{
+    'taskname':'Meeting',
+    'description':'Meeting with HR',
+    'status':'completed'
+}])
+db.todotasks.find({})
+db.todotask.remove({})
